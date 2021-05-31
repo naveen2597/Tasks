@@ -1,0 +1,61 @@
+#header
+{
+    height:150px;
+    width: 100%;
+    background-color: black;
+}
+h1{
+    text-align: center;
+    padding: 40px;
+    color: blanchedalmond;
+}
+#banner
+{
+    height: 50px;
+    width: 100%;
+    background-color: chocolate;
+    padding-top: 25px;
+}
+#banner ul li{
+    display: inline;
+    margin-left: 6px;
+    
+}
+#banner ul li a
+{
+    text-decoration: none;
+    
+}
+#left_container{
+    width:10%;
+    height:700px;
+    background-color: black;
+    overflow: hidden;
+    float: left;
+}
+#left_container ul li{
+    margin-top: 30px;
+    padding:40px;
+}
+#left_container ul li a{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+#border{
+    height: 400px;
+    width: 70%;
+    background-color:honeydew;
+    float: left;
+}
+h2{
+    text-align: center;
+    padding: 40px;
+    color: green;
+}
+#right_container{
+
+     height: 40px;
+    width: 10%; 
+    
+    float: right;
+}
