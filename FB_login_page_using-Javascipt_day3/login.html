@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+        <hr>
+        <div class="col-md-6">
+            <h1>Login Form</h1>
+            <form name="myForm" >
+                <table>
+                    <tr>
+                        <td>Login name: </td>
+                        <td><input type="text" id="1" name="login">
+                            <div id="userErrMsg">
+                                
+                            </div>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>password1:</td>
+                            <td>
+                                <input type="password" id="2" name="password1">
+                                <div id="passErrMsg">
+                                
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" name="submit" onclick="loginForm()">Button
+                                    </button>
+                                </td>
+                        </tr>
+                </table>
+                    </form>
+        </div>
+    <div class="col-md-6">
+   
+
+    <center>
+        <h1>Registration Form</h1>
+    
+    <form name="myForm" >
+        <table>
+            <tr>
+                <td>User name: </td>
+                <td><input type="text" id="x" name="user">
+                    <div id="userErrMsg">
+                        
+                    </div>
+                </td>
+                </tr>
+                <tr>
+                    <td>password:</td>
+                    <td>
+                        <input type="password" id="y" name="password">
+                        <div id="passErrMsg">
+                        
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        <input type="email" id="z" name="mail">
+                        <div id="emailErrMsg">
+                        
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" name="gender">Male
+                        <input type="radio" name="gender">Female
+                        <input type="radio" name="gender">Others
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of Birth:</td>
+                    <td>
+                        
+                    
+                        <input type="date" id="a"name="date">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" name="submit" onclick="validateForm()">Button
+                            </button>
+                        </td>
+                </tr>
+        </table>
+    </form>
+</center>
+</div>
+</div>
+<script>
+    alert("Welcome");
+    var students=[];
+    function validateForm(){
+        var name=document.getElementById("x").value;
+        var password=document.getElementById("y").value;
+        var mail=document.getElementById("z").value;
+        var date=document.getElementById("a").value;
+         var student={};
+         student.user=name;
+         student.password=password;
+         student.mail=mail;
+         student.date=date;
+         students.push(student);
+    
+         console.log(students);
+    }
+    function loginForm(){
+        var login=document.getElementById("1").value;
+        var password1=document.getElementById("2").value;
+
+        var userName=false;
+        var userPassword=false;
+        
+
+      for(var i=0;i<students.length;i++){
+          if(login==students[i].user){
+              userName=true;
+              if(password1==students[i].password){
+                  userPassword=true;
+                  break;
+              }
+          }
+      }
+      if(userName && userPassword) alert("Your User Name and Password is Valid")
+      else if(userName && !userPassword) alert("please Enter the correct password")
+      else alert("Pls Enter Valid Credential");
+
+
+
+    }
+    
+        //  var i;
+        //  for(i=0;i<students.length;i++){
+        //      if(students[i].name == loginUserName ){
+        //          alert("login sucessful")
+                 
+        //      }
+        //      else{
+        //          alert("login unsucessful")
+        //      }
+
+
+        //  }
+
+    
+        // if (name==""){
+        //     document.getElementById("userErrMsg").innerHTML="Please Enter your first name";
+        //     return false;
+        // }
+        // if(name!=""){
+        //     document.getElementById("userErrMsg").innerHTML="";
+
+        // }
+
+        //  if(password.length<6){
+        //     alert("Password must be at least 6 characters long."); 
+        //     return false;
+        // }
+    
+    
+    
+    
+    
+   
+    
+</script>
+
+        
+    
+</body>
+</html>
