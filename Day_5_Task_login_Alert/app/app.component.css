@@ -1,0 +1,33 @@
+.header3
+{
+    background-color: rgb(138, 6, 120); 
+    color: white; 
+    padding: 30px; 
+    text-align: center; 
+    font-size: 35px;
+    margin:0px;
+}
+.header4
+{
+    font-size: 26px;
+    text-align: left; 
+    margin: 10px;
+}
+/* .form
+{
+    margin-left: 10px;
+} */
+.card
+{
+    background-color: greenyellow; 
+    padding: 20px; 
+    margin-top: 30px; 
+    margin-left: 30px;
+    text-align: left;
+    width: 350px;
+}
+span
+{
+    color: red; 
+    font-size: 60px;
+}
