@@ -1,0 +1,25 @@
+
+h3
+{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    margin-top: 40px;
+}
+.form
+{
+    
+    padding: 20px;
+    height: 330px;
+    width: 400px;
+    background-color:rgb(166, 204, 206);
+    border-radius: 10px;
+    border:2px solid black;
+}
+ input
+{
+    margin-left: 50px;
+    width: 250px;
+    margin-top: 22px;
+    border-radius: 8px;
+}
+ 
