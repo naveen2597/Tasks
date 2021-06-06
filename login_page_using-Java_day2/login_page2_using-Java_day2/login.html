@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Registration Form</h1>
+    
+    <form name="myForm" >
+        <table>
+            <tr>
+                <td>User name: </td>
+                <td><input type="text" id="x" name="user">
+                    <div id="userErrMsg" style="color:red">
+                        
+                    </div>
+                </td>
+                </tr>
+                <tr>
+                    <td>password:</td>
+                    <td>
+                        <input type="password" id="y" name="password">
+                         <div id="passErrMsg" style="color:red">
+                        
+                        </div>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>Re-password:</td>
+                    <td>
+                    <input type="password" id="z" name="repassword">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        <input type="email" name="mail">
+                        <div id="emailErrMsg">
+                        
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" name="gender">Male
+                        <input type="radio" name="gender">Female
+                        <input type="radio" name="gender">Others
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td>
+                        <select >
+                            <option>+91</option>
+                    
+                        </select>
+                        <input type="phone"name="mobile digit">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" name="submit" onclick="validateForm()">Button
+                            </button>
+                        </td>
+                </tr>
+        </table>
+    </form>
+</center>
+<script>
+    alert("Welcome");
+    function validateForm(){
+        var name=document.getElementById("x").value;
+        var password=document.getElementById("y").value;
+        var repassword=document.getElementById("z").value;
+        
+        
+        if (name==""){
+            document.getElementById("userErrMsg").innerHTML="Please Enter your first name";
+            return false;
+        }
+        if(name!=""){
+            document.getElementById("userErrMsg").innerHTML="";
+
+        }
+        if(!isNaN(name)){
+            document.getElementById("userErrMsg").innerHTML="Only character should be allowed";
+            return false;
+        }
+        
+        
+        if(password==""){
+            document.getElementById("passErrMsg").innerHTML="please enter your pasword";
+            return false;
+        }
+        if(password!=""){
+            document.getElementById("passErrMsg").innerHTML="";
+
+        }
+
+        if(password.length<6){
+            alert("Password must be atleast 6 characters long."); 
+            return false;
+        }
+        if(password==repassword){
+            return true;
+        }
+        else{
+            alert("password must be same!");  
+            return false;
+        }
+        
+        
+
+    
+    
+    }
+   
+    
+</script>
+
+        
+    
+</body>
+</html>
