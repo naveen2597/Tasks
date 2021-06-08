@@ -1,0 +1,11 @@
+#ui{
+    background-color: rgb(150, 10, 92);
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+
+    
+}
+#ui label,h1{
+    color: #fff;
+}
