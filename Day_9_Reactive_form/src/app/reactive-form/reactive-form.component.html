@@ -1,0 +1,49 @@
+
+<div class="container">
+
+    <div class="row"> 
+        <div class="col-md-6">
+            <div id="ui">
+                <h1 class="text-center">REGISTRATION FORM</h1>
+                <hr>
+                <form class="form-group " style="text-align:center"[formGroup]="registerForm" >
+                    
+                        
+                    <label>User Name:</label>
+                <input type="text"formControlName= "uname" class="form-control" placeholder="Enter Your User Name"[ngClass]="{'form-control':true,'is-invalid':!f.uname?.valid && f.uname?.touched, 'is-valid':f.uname?.valid }" />
+                        <div *ngIf="f.uname?.errors?.required && f.uname?.touched" id="fnHelp" class="form-text custom-invalid-feedback">User Field is required</div>
+                        <div *ngIf="f.uname?.errors?.minlength && f.uname?.touched" id="fnHelp" class="form-text custom-invalid-feedback">Name should be atleast 5 characters.</div>
+                        <div *ngIf="f.uname?.errors?.maxlength && f.uname?.touched" id="fnHelp" class="form-text custom-invalid-feedback">Maximum name should be only 8 characters.</div>
+                            
+                
+                            <br>
+                    <!-- <label>Last Name:</label>
+                            <input type="text" ngModel name="lname" class="form-control"placeholder="Enter Your Last Name"><br> -->
+                    <label>Password:</label>
+                            <input type="password"  formControlName="password" class="form-control" placeholder="Enter Your Password"[ngClass]="{'form-control':true,'is-invalid':!f.password?.valid && f.password?.touched,
+                            'is-valid':f.password?.valid }"  />
+                            <div *ngIf="f.password?.errors?.required && f.password?.touched" id="fnHelp" class="form-text custom-invalid-feedback">Password Field is required</div>
+                            <div *ngIf="f.password?.errors?.minlength && f.uname?.touched" id="fnHelp" class="form-text custom-invalid-feedback">Password should be atleast 6 character</div>
+                            <br>
+                     <label>Email:</label>
+                         <input type="text" formControlName="email"  class="form-control" placeholder="Enter your Email Address" [ngClass]="{'form-control':true,'is-invalid':!f.email?.valid && f.email?.touched,
+                         'is-valid':f.email?.valid }"/>
+                         <div *ngIf="f.email?.errors?.required && f.email?.touched" id="fnHelp" class="form-text custom-invalid-feedback">Email Field is required</div>
+                         <div *ngIf="f.email?.errors?.email && f.email?.touched" id="fnHelp" class="form-text custom-invalid-feedback">Enter your valid email address</div>
+                    <br>
+                    <!-- <label>Gender</label>
+                    <select formControlName="gender" class="form-control"[ngClass]="{'form-control':true,'is-invalid':!f.gender?.valid && f.gender?.touched, 'is-valid':f.gender?.valid }">
+                        <option selected[ngValue]='null'></option>
+                        <option *ngFor="let item of Gender"[value]="item">{{item}}</option>
+
+                    </select> -->
+                    <br>
+                    
+                     <button type="button"  class="btn btn-primary btn-block btn-lg" (click)="onSubmit()"  >Register</button>
+             </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<br>
