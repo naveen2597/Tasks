@@ -10,6 +10,7 @@ import { from } from 'rxjs';
 export class StudentsComponent implements OnInit {
 
   constructor() { }
+  selectedUser : any ={};
   users: any = [{
     "name": "naveen",
     "Age": 25,
@@ -52,7 +53,7 @@ export class StudentsComponent implements OnInit {
     for (var i = 0; i < this.users.length; i++) {
       if (value == this.users[i].name || value == this.users[i].Age || value == this.users[i].Address) {
         // this.userFound = true;
-        
+        this.selectedUser = this.users[i];
         console.log(this.users[i]);
         break;
       }
