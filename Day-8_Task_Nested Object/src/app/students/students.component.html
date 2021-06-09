@@ -1,6 +1,6 @@
 <h1 class="text-center" style="color: brown;"><b>STUDENTS DETAILS</b></h1>
 <hr>
-
+<!-- search method-->
 <div class="row">
     <div class="col-md-12">
         <div>
@@ -11,8 +11,26 @@
     </div>
 </div>
 
+<!--Display function method-->
+<div>
+<h4>Selected User</h4>
+
+Name : {{selectedUser.name}}
+Age : {{selectedUser.Age}}
+
+<h4>Marks</h4>
+<div *ngFor="let mark of selectedUser.marks; let markIndex = index">
+
+    <h4>Sem 1 </h4>
+    <b>English - </b> {{mark.sem1.English}}
+    
+    </div>
 
 
+</div>
+
+
+<!--- REGISTER FORM-->
 
 <div class="container">
 
@@ -64,6 +82,8 @@
     </div>
 </div>
 <br>
+
+<!--TABLE FORM-->
 <div class="row">
     <div class="col-md-12">
         <table class="table table-bordered">
