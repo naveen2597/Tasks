@@ -1,0 +1,25 @@
+#ui{
+    background-color: rgb(176, 171, 243);
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    
+
+    
+}
+#ui label,h1{
+    color:black;
+}
+.alert input , .alert input[required]{
+    border-color: red;
+}
+.ng-valid[required], .ng-valid.required  {
+    border-right: 7px solid #1c581f; 
+  }
+  .ng-invalid:not(form)  {
+    border-right: 7px solid #7a1817; /* red */
+    
+  }
+.error{
+    color:red;
+}
