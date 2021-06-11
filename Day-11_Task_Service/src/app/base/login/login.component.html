@@ -1,0 +1,33 @@
+
+
+<div class="container">
+
+    <div class="row"> 
+        <div class="col-md-6">
+            <div id="ui">
+                <h1 class="text-center">LOIN FORM</h1>
+                <hr>
+                <form class="form-group " style="text-align:center" #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+                <label>First Name:</label>
+                <input type="text" name="firstname" class="form-control" placeholder="Enter Your User Name" #firstname="ngModel" [(ngModel)]="user.firstname" required minlength="6" />
+                
+                <span *ngIf="firstname.invalid && firstname.touched" class="error">
+                 <span *ngIf="firstname.errors?.required">First name is required</span>
+                 <span *ngIf="firstname.errors?.minlength">Enter the Minimum 6 character</span>
+
+                </span>
+                
+                <br>
+             
+                    <label>Password:</label>
+                     <input type="password"  name="password" class="form-control" placeholder="Enter Your Password" #password="ngModel" [(ngModel)]="user.password" required>
+                     <span *ngIf="password.invalid && password.touched" class="error">Password Field Is Required</span>
+                         <br>
+                         <button type="submit"  class="btn btn-primary btn-block btn-lg"  >Register</button>
+             </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<br>
