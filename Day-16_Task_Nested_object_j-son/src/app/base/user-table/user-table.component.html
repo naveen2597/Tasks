@@ -1,0 +1,197 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead >
+                <tr>
+                    <th>User Name</th>
+                    <th>Last Name</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Gender</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>{{loc.uname}}</td>
+                    <td>{{loc.lname}}</td>
+                    <td>{{loc.password}}</td>
+                    <td>{{loc.email}}</td>
+                    <td>{{loc.pnum}}</td>
+                    <td>{{loc.gender}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+    <div>
+        <button type="button" class="btn btn-primary" id="gb" (click)="goBack()">Go back</button>
+        <button type="button" class="btn btn-success" id="ei" (click)="editInfo()">Edit Info</button>
+    </div>
+</div>
+<!---FAKE DETAILS-BUTTON-->
+<table>
+    <div class="col-md-12">
+        <button type="button" class="btn btn-success btn-lg" (click)="getData()"> Details</button>
+        
+    </div>
+    <!---FAKE DETAILS--->
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead >
+                    <tr>
+                        <th >Userid</th>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Body</th>
+                        
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <tr *ngFor="let user of value">
+                            <td>{{user.userId}}</td>
+                            <td>{{user.id}}</td>
+                            <td>{{user.title}}</td>
+                            <td>{{user.body}}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div *ngIf="detail">
+            <h2 class="detail">{{detail.uname | uppercase}} Details</h2>
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <form class="edit">
+                    <div class="form-group">
+                        <label for="fname">User Name</label>
+                        <input type="text" name="uname" class="form-control" [(ngModel)]="detail.uname"
+                            placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="lname" class="form-control" [(ngModel)]="detail.lname"
+                            placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="mail">E-mail</label>
+                        <input type="email" name="email" class="form-control" [(ngModel)]="detail.email"
+                            placeholder="Mail-ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="pnum">Phone Number</label>
+                        <input type="number" name="pnum" class="form-control" [(ngModel)]="detail.pnum"
+                            placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Password</label>
+                        <input type="password" name="password" class="form-control" [(ngModel)]="detail.password"
+                            placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <input type="text" name="gender" class="form-control" [(ngModel)]="detail.gender"
+                            placeholder="Gender">
+                    </div>
+                    
+                        <button type="button" class="btn btn-success" (click)="updInfo()">Update Info</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+
+</div>
+<!----TABLE--JSON-->
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead >
+                <tr>
+                    <th >REFERENCE_ID</th>
+                    <th>ACCOUNT_NUMBER</th>
+                    <th>CURRENT_ACCOUNT_TYPE</th>
+                    <th>ACCOUNT_NAME</th>
+                    <th>CURRENCY_CODE</th>
+                    <th>AVL_BAL</th>
+                    <th>LEDGER_BALANCE</th>
+                    <th>EQ_AVL_BAL</th>
+                    <th>ACCOUNT_TYPE_CODE</th>
+                    <th>ACCOUNT_STATUS</th>
+                    <th>OPENING_DATE</th>
+                    
+                    
+                </tr>
+            </thead>
+
+            <tbody *ngFor="let Data of get">
+                
+                    <tr >
+                        <td>{{Data.REFERENCE_ID}}</td>
+                        <td>{{Data.ACCOUNT_NUMBER}}</td>
+                        <td>{{Data.CURRENT_ACCOUNT_TYPE}}</td>
+                        <td>{{Data.ACCOUNT_NAME}}</td>
+                        <td>{{Data.CURRENCY_CODE}}</td>
+                        <td>{{Data.AVL_BAL}}</td>
+                        <td>{{Data.LEDGER_BALANCE}}</td>
+                        <td>{{Data.EQ_AVL_BAL}}</td>
+                        <td>{{Data.ACCOUNT_TYPE_CODE}}</td>
+                        <td>{{Data.ACCOUNT_STATUS}}</td>
+                        <td>{{Data.OPENING_DATE}}</td>
+                
+                        
+                        
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+    
+    
+<!----CARD-JSON ---->
+
+    <div class="card col-md-4" style="margin-left: 500px;" *ngFor="let Data of get">
+        <div class="card-header">
+          {{cardheader.name}}:{{Data.ACCOUNT_NUMBER}}
+        </div>
+        <hr>
+        <div class="card-body" style="padding :10px " >
+          {{cardfield[0].name}} :{{Data.CURRENT_ACCOUNT_TYPE_VALUE}}<br>
+          {{cardfield[1].name}} :{{Data.ACCOUNT_NAME}}<br>
+          {{cardfield[2].name}} :{{Data.AVL_BAL}}<br>
+          {{cardfield[3].name}} :{{Data.CURRENCY_CODE}}<br>
+          {{cardfield[4].name}} :{{Data.LEDGER_BALANCE}}<br>
+          <hr>
+        </div>
+      </div>
+      
+   <!---LIST-JSON-->   
+   <div>
+   <ul class="list-group col-md-4" *ngFor="let Data of get">
+
+    <li >{{listlinesfield[0].name}} :{{Data.ACCOUNT_NUMBER}}</li>
+    <li >{{listlinesfield[1].name}} :{{Data.ACCOUNT_NAME}} </li>
+    <li >{{listlinesfield[2].name}} :{{Data.AVL_BAL}}</li>
+    <li >{{listlinesfield[3].name}} :{{Data.LEDGER_BALANCE}} </li>
+    <li >{{listlinesfield[4].name}} :{{Data.EQ_AVL_BAL}} </li>
+    <li >{{listlinesfield[5].name}} :{{Data.OPENING_DATE}} </li>
+  </ul>
+  </div>
