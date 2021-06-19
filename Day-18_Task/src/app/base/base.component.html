@@ -1,0 +1,41 @@
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary" (click)="login()" style="border-radius: 0.7%;">Go To Login:</button> 
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary" (click)="register()" style="border-radius: 0.7%;">Go To Register: </button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary" (click)="table()" style="border-radius: 0.7%;">Go To TableForm: </button>
+        </div>
+    </div>
+</div> -->
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-12">
+      <h5 class="text-center" style="background-color: rgb(31, 194, 223); padding: 10px;">{{json.name}}</h5>
+    </div> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top: 20px;">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" *ngFor="let menuitem of menugroup">
+      <ul class="navbar-nav">
+        <li class="nav-item active" >
+          <a class="nav-link" href="#" style="color: rgb(226, 23, 23);" >{{menuitem.name}} <span class="sr-only">(current)</span></a>
+        </li>
+        <!-- <span *ngFor="let d of detail" style="color: black;">
+          {{d.title}}
+        </span> -->
+
+      
+      </ul>
+    </div>
+  </nav>
+  </div>
+  

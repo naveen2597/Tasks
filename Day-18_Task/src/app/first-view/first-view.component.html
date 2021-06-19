@@ -1,0 +1,16 @@
+
+
+   <div class="container ">
+  <div class ="row" style="padding-top: 130px;">
+  <div class="card col-md-3" style="width: 18rem;padding: 10px; box-shadow: rgb(20, 20, 20);" *ngFor="let Data of dataArray" (click)="onSubmit()" >
+    <div class="card-body" (click)="display(Data)">
+        <i class="fa fa-user"></i>
+      <h5 class="card-title" style="color: rgb(30, 116, 143);" >
+     {{Data.name}}
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted"class="fa fa-lock">{{Data.style.textClass}}</h6>
+      
+    </div>
+  </div>
+  </div>
+</div>
